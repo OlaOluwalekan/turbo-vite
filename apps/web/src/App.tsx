@@ -1,9 +1,21 @@
+import { Button } from '@repo/ui/button'
+import { Logo } from '@repo/ui/logo'
 import { Typography } from '@repo/ui/typography'
 
 const App = () => {
   return (
-    <div>
-      <Typography element='h1'>App</Typography>
+    <div className=''>
+      <header className='w-[90%] max-w-[1200px] mx-auto py-2 border-b border-b-gray-300 flex justify-between items-center'>
+        <Logo size={1} />
+
+        <nav>
+          <Button className='bg-red-400'>Docs</Button>
+        </nav>
+      </header>
+
+      <main className='w-[90%] max-w-[1200px] mx-auto'>
+        <Typography element='h2'>Turbo Web</Typography>
+      </main>
     </div>
   )
 }

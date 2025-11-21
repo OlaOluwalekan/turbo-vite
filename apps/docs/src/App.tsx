@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Logo } from '@repo/ui/logo'
+import { Typography } from '@repo/ui/typography'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <header className='w-[90%] max-w-[1200px] mx-auto py-2 border-b border-b-gray-300 flex justify-between items-center'>
+        <div className='flex'>
+          <Logo size={1} />
+          <Typography element='h5' className='ml-[-5px] z-10'>
+            Docs
+          </Typography>
+        </div>
+      </header>
+
+      <main className='w-[90%] max-w-[1200px] mx-auto'>
+        <Typography element='h2'>Turbo Docs</Typography>
+      </main>
+    </div>
   )
 }
 
