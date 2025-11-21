@@ -8,7 +8,7 @@ export const Logo = ({ size = 1 }: { size?: number }) => {
     >
       <span
         style={{
-          backgroundColor: '#0aa205ff',
+          backgroundColor: '#a20a05ff',
           padding: '0 5px',
           borderRadius: '5px',
           color: 'white',
