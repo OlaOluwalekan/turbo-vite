@@ -8,5 +8,11 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "typescript": "latest"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
   }
 }
