@@ -16,7 +16,7 @@ export const Typography = ({
       return (
         <h1
           style={{ fontSize: '32px', fontWeight: 900, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h1>
@@ -25,7 +25,7 @@ export const Typography = ({
       return (
         <h2
           style={{ fontSize: '28px', fontWeight: 800, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h2>
@@ -34,7 +34,7 @@ export const Typography = ({
       return (
         <h3
           style={{ fontSize: '24px', fontWeight: 700, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h3>
@@ -43,7 +43,7 @@ export const Typography = ({
       return (
         <h4
           style={{ fontSize: '20px', fontWeight: 700, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h4>
@@ -52,7 +52,7 @@ export const Typography = ({
       return (
         <h5
           style={{ fontSize: '18px', fontWeight: 600, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h5>
@@ -61,7 +61,7 @@ export const Typography = ({
       return (
         <h6
           style={{ fontSize: '16px', fontWeight: 600, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </h6>
@@ -70,7 +70,7 @@ export const Typography = ({
       return (
         <p
           style={{ fontSize: '16px', fontWeight: 500, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </p>
@@ -79,7 +79,7 @@ export const Typography = ({
       return (
         <p
           style={{ fontSize: '16px', fontWeight: 500, ...style }}
-          className={className}
+          className={`text-teal-500 ${className}`}
         >
           {children}
         </p>

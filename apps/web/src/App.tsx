@@ -11,7 +11,7 @@ const App = () => {
         <Logo size={1} />
 
         <nav>
-          <Button className='bg-red-400'>Docs</Button>
+          <Button>Docs</Button>
         </nav>
       </header>
 

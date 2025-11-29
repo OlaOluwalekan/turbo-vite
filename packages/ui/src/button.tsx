@@ -1,4 +1,4 @@
-'use client'
+import '../dist/output.css'
 
 import { type CSSProperties, type ReactNode } from 'react'
 
@@ -13,13 +13,11 @@ export const Button = ({ children, className, style }: ButtonProps) => {
     <button
       style={{
         cursor: 'pointer',
-        backgroundColor: 'green',
-        color: 'white',
         padding: '5px 20px',
         borderRadius: '5px',
         ...style,
       }}
-      className={className}
+      className={`bg-primary text-white ${className}`}
       onClick={() => alert(`Hello from your app!`)}
     >
       {children}
