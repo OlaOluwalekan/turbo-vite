@@ -1,3 +1,4 @@
+import { Button } from '@repo/ui/button'
 import { Logo } from '@repo/ui/logo'
 import { Typography } from '@repo/ui/typography'
 
@@ -15,6 +16,8 @@ const App = () => {
 
       <main className='w-[90%] max-w-[1200px] mx-auto'>
         <Typography element='h2'>Turbo Docs</Typography>
+
+        <Button>Hello</Button>
       </main>
     </div>
   )
