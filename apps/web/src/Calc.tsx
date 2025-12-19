@@ -1,6 +1,4 @@
 import { useState } from 'react'
-// import { add } from '@repo/math/add'
-// import { subtract } from '@repo/math/subtract'
 import { Typography } from '@repo/ui/typography'
 import axios from 'axios'
 
@@ -14,15 +12,17 @@ const Calc = () => {
   const calculate = async () => {
     try {
       setIsLoading(true)
-      const data = await axios.post('http://localhost:3000/calculate', {
-        operation: operator,
-        numbers: {
-          first: Number(num1),
-          second: Number(num2),
-        },
-      })
-      console.log(data.data)
-      setResult(0)
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_DOMAIN}/calculate`,
+        {
+          operation: operator,
+          numbers: {
+            first: Number(num1),
+            second: Number(num2),
+          },
+        }
+      )
+      setResult(data.result)
     } catch (error) {
       console.log('Calculate Error:=>', error)
     } finally {
