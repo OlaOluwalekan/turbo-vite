@@ -1,8 +1,8 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-// import { add } from '@repo/math/add'
-// import { subtract } from '@repo/math/subtract'
+import { add } from '@repo/math/add'
+import { subtract } from '@repo/math/subtract'
 
 const app = express()
 
@@ -15,12 +15,14 @@ app.get('/', (_, res) => {
 
 app.post('/calculate', (req, res) => {
   const { operation, numbers } = req.body
-  let result: number = 0
+  let result: number | null = null
 
   if (operation === '+') {
-    // result = add(numbers.first, numbers.second)
+    result = add(numbers.first, numbers.second)
+  } else if (operation === '-') {
+    result = subtract(numbers.first, numbers.second)
   } else {
-    // result = subtract(numbers.first, numbers.second)
+    result = null
   }
 
   //   console.log('server | calculate ==>', req.body)

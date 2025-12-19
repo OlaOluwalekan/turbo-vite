@@ -1,13 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "lib": ["ES2020"],
+    "module": "nodenext",
+    "lib": ["ES2023"],
     "outDir": "./dist",
     "rootDir": "./src",
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    "declaration": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
