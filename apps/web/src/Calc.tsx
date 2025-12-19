@@ -1,13 +1,34 @@
 import { useState } from 'react'
-import { add } from '@repo/math/add'
-import { subtract } from '@repo/math/subtract'
+// import { add } from '@repo/math/add'
+// import { subtract } from '@repo/math/subtract'
 import { Typography } from '@repo/ui/typography'
+import axios from 'axios'
 
 const Calc = () => {
   const [num1, setNum1] = useState('')
   const [num2, setNum2] = useState('')
   const [operator, setOperator] = useState('+')
   const [result, setResult] = useState<Number | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const calculate = async () => {
+    try {
+      setIsLoading(true)
+      const data = await axios.post('http://localhost:3000/calculate', {
+        operation: operator,
+        numbers: {
+          first: Number(num1),
+          second: Number(num2),
+        },
+      })
+      console.log(data.data)
+      setResult(0)
+    } catch (error) {
+      console.log('Calculate Error:=>', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <div>
@@ -52,18 +73,10 @@ const Calc = () => {
         </div>
 
         <button
-          onClick={() => {
-            let result: number
-            if (operator === '+') {
-              result = add(Number(num1), Number(num2))
-            } else {
-              result = subtract(Number(num1), Number(num2))
-            }
-            setResult(result)
-          }}
+          onClick={calculate}
           className='cursor-pointer bg-green-600 text-white py-2 px-5 md:py-1'
         >
-          Add
+          {isLoading ? 'Calculating...' : 'Calculate'}
         </button>
       </div>
 
