@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import { add } from '@repo/math/add'
 import { subtract } from '@repo/math/subtract'
+import { prisma } from './lib/prisma.js'
 
 const app = express()
 
@@ -26,6 +27,12 @@ app.post('/calculate', (req, res) => {
   }
 
   res.status(200).json({ result })
+})
+
+app.get('/users/all', async (_, res) => {
+  const users = await prisma.user.findMany()
+
+  res.status(200).json(users)
 })
 
 const port = process.env.PORT || 3000
